@@ -1,0 +1,36 @@
+import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+class Customer {
+    public String customername;
+    public String carmodel;
+    public String carnumber;
+}
+
+class Rent extends Customer {
+    public int days = 0;
+    public int rentalfee = 0;
+
+    public void getData() {
+        login();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("\t\t\t\tPlease Enter your Name: ");
+        customername = sc.nextLine();
+        System.out.println();
+        do {
+            System.out.println("\t\t\t\tPlease Select a Car");
+            System.out.println("\t\t\t\tEnter 'A' for Tesla 20011.");
+            System.out.println("\t\t\t\tEnter 'B' for Hyundai 2015.");
+            System.out.println("\t\t\t\tEnter 'C' for Ford 2017.");
+            System.out.println();
+            System.out.print("\t\t\t\tChoose a Car from the above options: ");
+            carmodel = sc.nextLine();
+            System.out.println();
+            System.out.println("                                ----------------------------------");
+            if (carmodel.equalsIgnoreCase("A")) {
+                System.out.println("\t\t                You have chosen Tesla model 2011");
+                displayCarDetails("A.txt");
+            } else if (carmodel.equalsIgnoreCase("B")) {
+                System.out.println("\t\t                You have ch
